@@ -14,9 +14,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.IClientCommand;
 
 public class ToggleAfk implements IClientCommand {
+	
 	public static boolean AFK = false;
-	public static String AFKmessage = "/r &5I'm currently AFK and may not be able to respond.";
-	public static boolean afkcooldown = false;
 	
 	private final List aliases;
 
@@ -36,7 +35,7 @@ public class ToggleAfk implements IClientCommand {
 	@Override
 	public void execute(MinecraftServer arg0, ICommandSender arg1, String[] arg2) throws CommandException {
 		ITextComponent telluser = new TextComponentString("");
-		if (AFK == true) {
+		if (AFK) {
 			AFK = false;
 			PrefixMod.afknames = new ArrayList<String>();
 			telluser.appendText("You are no longer afk");
@@ -50,13 +49,13 @@ public class ToggleAfk implements IClientCommand {
 		}
 		
 		if (arg2.length > 0) {
-			AFKmessage = "/r ";
+			Afk.AFKmessage = "/r ";
 			for (int i = 0; i < arg2.length; i++) {
-				AFKmessage += arg2[i]+" ";
+				Afk.AFKmessage += arg2[i]+" ";
 			}
 		}
 		else {
-			AFKmessage = "/r &5I'm currently AFK and may not be able to respond.";
+			Afk.AFKmessage = "/r &5I'm currently AFK and may not be able to respond.";
 		}
 		
 		Minecraft.getMinecraft().player.sendMessage(telluser);

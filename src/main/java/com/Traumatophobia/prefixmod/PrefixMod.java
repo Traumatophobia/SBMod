@@ -113,6 +113,7 @@ public class PrefixMod {
 		ClientCommandHandler.instance.registerCommand(new Afk());
 		ClientCommandHandler.instance.registerCommand(new ToggleAfk());
 		ClientCommandHandler.instance.registerCommand(new AutoPrivate());
+		ClientCommandHandler.instance.registerCommand(new AutoLotBuy());
 	}
 	
 	public static int pressTime = 0;
@@ -150,6 +151,7 @@ public class PrefixMod {
 			
 			try {
 				Robot robot = new Robot();
+				robot.keyRelease(KeyEvent.VK_SHIFT);
 				switch(character) {
 				case "a": robot.keyPress(KeyEvent.VK_A); robot.keyRelease(KeyEvent.VK_A); break;
 				case "b": robot.keyPress(KeyEvent.VK_B); robot.keyRelease(KeyEvent.VK_B); break;
@@ -225,7 +227,7 @@ public class PrefixMod {
 
 				case "\n": robot.keyPress(KeyEvent.VK_ENTER); robot.keyRelease(KeyEvent.VK_ENTER); break;
 				
-				case "§": robot.keyPress(KeyEvent.VK_ESCAPE); robot.keyRelease(KeyEvent.VK_ESCAPE); break;
+				case "¬": robot.keyPress(KeyEvent.VK_ESCAPE); robot.keyRelease(KeyEvent.VK_ESCAPE); break;
 				}
 				
 			} catch (Exception e) {
@@ -327,9 +329,9 @@ public class PrefixMod {
 	public void onPlayerTick(ClientTickEvent event) {
 		
 		if (printmsg) {
-			if (printmsgtimer >= 5) {
+			if (printmsgtimer >= 10) {
 				if (autoprivate) {
-					converttext("[Private]\n"+Minecraft.getMinecraft().player.getName()+"§");
+					converttext(AutoPrivate.text);
 				}
 				
 				printmsg = false;
@@ -344,7 +346,6 @@ public class PrefixMod {
 			if (Afk.afkcooldown) {
 				if (afkcounter >= 50) {
 					Afk.afkcooldown = false;
-					afknames.add("Test");
 				}
 			}
 			if (afkcounter >= 1000) {
@@ -744,7 +745,7 @@ public class PrefixMod {
 	    String newstring = "";
 	    String playername = Minecraft.getMinecraft().player.getName();
 	    
-	    if (message.startsWith(TextFormatting.GOLD+"[") && message2.contains(" -> me]") && !splitmessage2[0].endsWith(":") && !splitmessage[1].endsWith(":") && Afk.AFK) {
+	    if (message.startsWith(TextFormatting.GOLD+"[") && message2.contains(" -> me]") && !splitmessage2[0].endsWith(":") && !splitmessage[1].endsWith(":") && (Afk.AFK || ToggleAfk.AFK)) {
 	    	String msgname = "";
 	    	if (message2.startsWith("[[")) {
 	    		msgname = splitmessage2[1];

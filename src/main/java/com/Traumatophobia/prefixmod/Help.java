@@ -61,32 +61,37 @@ public class Help implements IClientCommand {
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglewelcome - removes the title when you cross island boarders"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleshop - removes shop notifications"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleall - removes everything"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/noticeclag - Makes clag more noticable"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoprivate - Automatically Privates Signs"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autolockette - Automatically lockettes signs"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 2 for next more commands"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 		}
 		else if (arg2[0].equals("2")) {
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleafk - Same as /tafk but you have to type it again to cancel"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/colours - shows all formatting colours"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvert [message] - automatically sends message every minuite"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopautoadvert - stops auto advert"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadverttime [time] - sets the time between auto adverts"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/joincommand - Adds commands to be used when you log in"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skylord+ commands"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autofix - Automatically fixes when durability falls below 10%"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skygod+ commands"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/enchantall - enchants held item to max"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skytitan+ commands"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autospawnmob [mob] [amount] [player] - Auto /spawnmob every min"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob sheep:rainbow [amount] [player] - cycles through colours"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob - stops spawning mobs"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/noticeclag - Makes clag more noticable"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleafk - Same as /tafk but you have to type it again to cancel"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/colours - shows all formatting colours"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvert [message] - automatically sends message every minuite"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopautoadvert - stops auto advert"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadverttime [time] - sets the time between auto adverts"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/joincommand - Adds commands to be used when you log in"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoprivate [Line2] [Line3] - Automatically writes private signs"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autobuy - Automatically buys lottery tickets"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 3 for next more commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+
+		}
+		else if (arg2[0].equals("3")) {
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skylord+ commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autofix - Automatically fixes when durability falls below 10%"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skygod+ commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/enchantall - enchants held item to max"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skytitan+ commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autospawnmob [mob] [amount] [player] - Auto /spawnmob every min"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob sheep:rainbow [amount] [player] - cycles through colours"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob - stops spawning mobs"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 		}
 		else {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Please do /thelp [page number]"));
