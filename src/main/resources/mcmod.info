@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tsb",
+  "name": "Skyblock Mod",
+  "description": "A mod designed for skyblock.net",
+  "version": "0.1",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Traumatophobia"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
