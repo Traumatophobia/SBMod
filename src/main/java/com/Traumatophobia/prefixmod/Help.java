@@ -26,6 +26,7 @@ public class Help implements IClientCommand {
 		aliases.add("trauphohelp");
 		aliases.add("sbmodhelp");
 		aliases.add("skyblockmodhelp");
+		aliases.add("tsbhelp");
 		aliases.add("thelp");
     } 
 	
@@ -47,50 +48,69 @@ public class Help implements IClientCommand {
 		if (arg2.length == 0 || arg2[0].equals("1")) {
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Universal Commands"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglenotify - Toggles your name being highlighted"));
+		
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/addnick - adds extra words to notify"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/delnick - stops notifing you when a word is said"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/nicklist - lists your nicknames"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/setchatprefix [prefix] - Sets a prefix before you talk"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/setchatsuffix [suffix] - Sets a suffix after you talk"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/removechatprefix - removes your prefix"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglelottery - removes [SBLottery] in chat"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglevotes - removes 'player voted' in chat"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togletips - removes [Skyblock] in chat"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglemobarena - removes [MobArena] in chat"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglewelcome - removes the title when you cross island boarders"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleshop - removes shop notifications"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleall - removes everything"));
-		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 2 for next more commands"));
+		
+		Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 2 for next page"));
 		Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 		}
 		else if (arg2[0].equals("2")) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/noticeclag - Makes clag more noticable"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleafk - Same as /tafk but you have to type it again to cancel"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/colours - shows all formatting colours"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvert [message] - automatically sends message every minuite"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopautoadvert - stops auto advert"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Auto Utility commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autobuy - Automatically buys 1 lottery ticket"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvert [message] - automatically sends message every 5 minutes"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvertstop - stops auto advert"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadverttime [time] - sets the time between auto adverts"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/joincommand - Adds commands to be used when you log in"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoprivate [Line2] [Line3] - Automatically writes private signs"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autobuy - Automatically buys lottery tickets"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 3 for next more commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/colors - shows all formatting colors"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/clag - displays 'ClearLag' overlay "));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/joincommand - Adds commands to be used when you log in"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 3 for next page"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-
 		}
 		else if (arg2[0].equals("3")) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Toggle commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleall - removes everything"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleafk - Same as /tafk but you have to type it again to cancel"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleadvancement - removes 'Has made the advancement' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglebans - removes [SkyblockBans] from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleground - removes 'Ground items will be removed in' from chat "));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglejoins - removes new players 'Welcome to Skyblock!' from chat "));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglelottery - removes [SBLottery] from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglelucky - removes 'lucky vote rewards' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglemobarena - removes [MobArena] in chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglenotify - toggles your name being highlighted"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglerarecrate - toggles 'has opened a rare crate key' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleshop - removes shop notifications"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleskychat - removes '[Skychat] hover game' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggletips - removes [Skyblock] in chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglevotes - removes 'player voted' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglewelcome - removes the island border 'welcome' overlay"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 4 for next page"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));	
+		}
+		else if (arg2[0].equals("4")) {
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skylord+ commands"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autofix - Automatically fixes when durability falls below 10%"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autofix - Automatically fixes when durability falls below 20%"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skygod+ commands"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/enchantall - enchants held item to max"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/enchantnone - removes all enchants ONLY from book."));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skytitan+ commands"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autospawnmob [mob] [amount] [player] - Auto /spawnmob every min"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob sheep:rainbow [amount] [player] - cycles through colours"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autospawnmob [mob] [amount] [player] - auto spawns up to 2 mobs every 30 seconds"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autospawnmob sheep:rainbow [amount] [player] - Spawn cycles 2 sheep of every color"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopspawnmob - stops spawning mobs"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglespawned - removes 'mob spawned' notification from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/asm and /ssm can be used as quick command aliases "));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("The alias command /t can used with almost every command. eg. /tvotes, /tshop, /tclag"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 		}
 		else {

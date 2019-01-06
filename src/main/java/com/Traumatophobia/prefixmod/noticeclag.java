@@ -23,6 +23,7 @@ public class noticeclag implements IClientCommand {
     { 
 		aliases = new ArrayList();
 		aliases.add("nc");
+		aliases.add("clag");
     } 
 	
 
@@ -37,12 +38,13 @@ public class noticeclag implements IClientCommand {
 		ITextComponent telluser = new TextComponentString("");
 		if (Toggled == true) {
 			Toggled = false;
-			telluser.appendText("Clag messages will no longer be displayed in actionbar");
+			telluser.appendText("Clag overlay disabled");
+			
 		}
 		else if (Toggled == false) {
-			Toggled = true;
+				Toggled = true;
 
-			telluser.appendText("Clag messages will become more noticable");
+			telluser.appendText("Clag overlay enabled");
 			
 		}
 		Minecraft.getMinecraft().player.sendMessage(telluser);

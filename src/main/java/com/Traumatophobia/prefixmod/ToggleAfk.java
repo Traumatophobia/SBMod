@@ -55,7 +55,7 @@ public class ToggleAfk implements IClientCommand {
 			}
 		}
 		else {
-			Afk.AFKmessage = "/r &5I'm currently AFK and may not be able to respond.";
+			Afk.AFKmessage = "/r &5I may currently be AFK, please send mail if I don't respond.";
 		}
 		
 		Minecraft.getMinecraft().player.sendMessage(telluser);
@@ -107,4 +107,3 @@ public class ToggleAfk implements IClientCommand {
 	}
 
 }
-

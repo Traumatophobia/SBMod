@@ -11,6 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.client.IClientCommand;
 
 public class AutoAdvertTime implements IClientCommand {
@@ -40,15 +41,15 @@ public class AutoAdvertTime implements IClientCommand {
 	public void execute(MinecraftServer arg0, ICommandSender arg1, String[] arg2) throws CommandException {
 		if (arg2.length == 0) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Timer reset to default"));
-			time = 2000;
+			time = 5000;
 		}
 		else if (arg2.length > 1) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Please do /autoadverttime [time]"));
 		}
 		else {
 			try {
-			if (Integer.parseInt(arg2[0]) < 2) {
-				Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Minimum time of 2 minuites!"));
+			if (Integer.parseInt(arg2[0]) < 5) {
+				Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Minimum time of 5 minuites!"));
 			}
 			else {
 				time = 2400 * Integer.parseInt(arg2[0]);
