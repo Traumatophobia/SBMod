@@ -24,6 +24,7 @@ public class AutoAdvert implements IClientCommand {
     { 
 		aliases = new ArrayList();
 		aliases.add("stopautoadvert");
+		aliases.add("autoadvertstop");
     } 
 
 	@Override
