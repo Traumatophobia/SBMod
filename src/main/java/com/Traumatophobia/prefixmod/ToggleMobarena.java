@@ -23,6 +23,7 @@ public class ToggleMobarena implements IClientCommand {
 		aliases = new ArrayList();
 		aliases.add("tma");
 		aliases.add("togglemobarena");
+		aliases.add("togglema");
 		
     } 
 	
@@ -60,7 +61,7 @@ public class ToggleMobarena implements IClientCommand {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "togglema";
+		return "togglemobarena";
 	}
 
 	@Override
@@ -73,7 +74,7 @@ public class ToggleMobarena implements IClientCommand {
 	@Override
 	public String getUsage(ICommandSender arg0) {
 		// TODO Auto-generated method stub
-		return "togglema";
+		return "togglemobarena";
 	}
 
 	@Override
