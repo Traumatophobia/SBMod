@@ -21,7 +21,7 @@ public class ToggleVote implements IClientCommand {
 	public ToggleVote()
     { 
 		aliases = new ArrayList();
-		aliases.add("tv");
+		aliases.add("tvote");
 		aliases.add("togglevotes");
 		
     } 
