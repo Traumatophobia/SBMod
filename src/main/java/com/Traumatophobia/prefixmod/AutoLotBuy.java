@@ -94,4 +94,3 @@ public class AutoLotBuy implements IClientCommand {
 	}
 
 }
-
