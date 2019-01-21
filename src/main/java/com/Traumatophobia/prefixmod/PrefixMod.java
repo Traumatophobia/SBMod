@@ -814,7 +814,7 @@ public class PrefixMod {
 	    }
 	    
 	    if (message2.contains("[SBLottery] Cong") && autobuy) {
-	    	Minecraft.getMinecraft().player.sendChatMessage("/lot buy 1");
+	    	Minecraft.getMinecraft().player.sendChatMessage("/lot buy 2");
 	    }
 	    
 	    if (message2.contains("[SBLottery]") && message2.startsWith("[S") && ToggleLottery.Toggled) {
