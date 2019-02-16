@@ -90,38 +90,38 @@ public class PrefixMod {
 	{
 		ClientCommandHandler.instance.registerCommand(new ToggleNotify());
 		ClientCommandHandler.instance.registerCommand(new SetPrefix());
-		ClientCommandHandler.instance.registerCommand(new AutoAdvert());
-		ClientCommandHandler.instance.registerCommand(new AutoAdvertTime());
-		ClientCommandHandler.instance.registerCommand(new AutoSpawnMob());
-		ClientCommandHandler.instance.registerCommand(new AutoFix());
-		ClientCommandHandler.instance.registerCommand(new AutoPrivate());
-		ClientCommandHandler.instance.registerCommand(new AutoLotBuy());
-		ClientCommandHandler.instance.registerCommand(new Afk());
-		ClientCommandHandler.instance.registerCommand(new Colours());
+		ClientCommandHandler.instance.registerCommand(new ToggleLottery());
+		ClientCommandHandler.instance.registerCommand(new ToggleVote());
+		ClientCommandHandler.instance.registerCommand(new ToggleTips());
+		ClientCommandHandler.instance.registerCommand(new ToggleAll());
 		ClientCommandHandler.instance.registerCommand(new EnchantAll());
 		ClientCommandHandler.instance.registerCommand(new ExtraNotify());
+		ClientCommandHandler.instance.registerCommand(new Colours());
 		ClientCommandHandler.instance.registerCommand(new RemoveNotify());
+		ClientCommandHandler.instance.registerCommand(new AutoSpawnMob());
+		ClientCommandHandler.instance.registerCommand(new Help());
+		ClientCommandHandler.instance.registerCommand(new AutoAdvert());
+		ClientCommandHandler.instance.registerCommand(new AutoFix());
+		ClientCommandHandler.instance.registerCommand(new ToggleMobarena());
+		ClientCommandHandler.instance.registerCommand(new AutoAdvertTime());
 		ClientCommandHandler.instance.registerCommand(new JoinCommands());
+		ClientCommandHandler.instance.registerCommand(new SetSuffix());
+		ClientCommandHandler.instance.registerCommand(new ToggleWelcome());
+		ClientCommandHandler.instance.registerCommand(new ToggleShop());
 		ClientCommandHandler.instance.registerCommand(new noticeclag());
 		ClientCommandHandler.instance.registerCommand(new TestCommand());
-		ClientCommandHandler.instance.registerCommand(new ToggleAdvancement());
+		ClientCommandHandler.instance.registerCommand(new Afk());
 		ClientCommandHandler.instance.registerCommand(new ToggleAfk());
-		ClientCommandHandler.instance.registerCommand(new ToggleBans());
-		ClientCommandHandler.instance.registerCommand(new ToggleGround());
-		ClientCommandHandler.instance.registerCommand(new ToggleJoins());
-		ClientCommandHandler.instance.registerCommand(new ToggleLottery());
-		ClientCommandHandler.instance.registerCommand(new ToggleLucky());
-		ClientCommandHandler.instance.registerCommand(new ToggleMobarena());
+		ClientCommandHandler.instance.registerCommand(new AutoPrivate());
+		ClientCommandHandler.instance.registerCommand(new AutoLotBuy());
+		ClientCommandHandler.instance.registerCommand(new ToggleAdvancement());
 		ClientCommandHandler.instance.registerCommand(new ToggleRarecrate());
-		ClientCommandHandler.instance.registerCommand(new ToggleShop());
+		ClientCommandHandler.instance.registerCommand(new ToggleCrates());
+		ClientCommandHandler.instance.registerCommand(new ToggleSorry());
 		ClientCommandHandler.instance.registerCommand(new ToggleSkychat());
-		ClientCommandHandler.instance.registerCommand(new ToggleSpawned());
-		ClientCommandHandler.instance.registerCommand(new ToggleTips());
-		ClientCommandHandler.instance.registerCommand(new ToggleVote());
-		ClientCommandHandler.instance.registerCommand(new ToggleWelcome());
-		ClientCommandHandler.instance.registerCommand(new ToggleAll());
-		ClientCommandHandler.instance.registerCommand(new SetSuffix());
-		ClientCommandHandler.instance.registerCommand(new Help());
+		ClientCommandHandler.instance.registerCommand(new ToggleGround());
+		ClientCommandHandler.instance.registerCommand(new ToggleLucky());
+		ClientCommandHandler.instance.registerCommand(new ToggleBans());
 	}
 	
 	public static int pressTime = 0;
@@ -235,7 +235,7 @@ public class PrefixMod {
 
 				case "\n": robot.keyPress(KeyEvent.VK_ENTER); robot.keyRelease(KeyEvent.VK_ENTER); break;
 				
-				case "Â¬": robot.keyPress(KeyEvent.VK_ESCAPE); robot.keyRelease(KeyEvent.VK_ESCAPE); break;
+				case "¬": robot.keyPress(KeyEvent.VK_ESCAPE); robot.keyRelease(KeyEvent.VK_ESCAPE); break;
 				}
 				
 			} catch (Exception e) {
@@ -270,22 +270,23 @@ public class PrefixMod {
 		isgod = true;
 		isfly = true;
 		turnon = false;
-		ToggleAdvancement.Toggled = false;
-		ToggleBans.Toggled = false;
-		ToggleGround.Toggled = false;
-		ToggleJoins.Toggled = false;
-		ToggleLucky.Toggled = false;
-		ToggleMobarena.Toggled = false;
-		ToggleRarecrate.Toggled = false;
-		ToggleSkychat.Toggled = false;
-		ToggleSpawned.Toggled = false;
-		ToggleShop.Toggled = false;
-		ToggleTips.Toggled = false;
 		ToggleVote.Toggled = false;
 		ToggleWelcome.Toggled = false;
+		ToggleTips.Toggled = false;
+		ToggleShop.Toggled = false;
 		toggled = false;
+		ToggleMobarena.Toggled = false;
 		ToggleLottery.Toggled = false;
+		ToggleAdvancement.Toggled = false;
+		ToggleRarecrate.Toggled = false;
+		ToggleCrates.Toggled = false;
+		ToggleSorry.Toggled = false;
+		ToggleSkychat.Toggled = false;
+		ToggleGround.Toggled = false;
+		ToggleLucky.Toggled = false;
+		ToggleBans.Toggled = false;
 		ToggleAll.Toggled = false;
+		
 	}
 	
 	
@@ -379,7 +380,7 @@ public class PrefixMod {
 		try {
 		if (
 				percent
-				< 60
+				< 30
 				&& autofix && item.isItemStackDamageable()
 				&& cooldown == false) {
 			Minecraft.getMinecraft().player.sendChatMessage("/fix all");
@@ -433,8 +434,9 @@ public class PrefixMod {
 			}
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(""));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Skyblock Mod 1.7"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Type /thelp for a list of commands."));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Skyblock and Economy Mod for Forge"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Updated version 2.0"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Use the command /tsbhelp for a list of commands!"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(""));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			
@@ -767,6 +769,16 @@ public class PrefixMod {
 	    	else {
 	    		msgname = splitmessage[0].substring(1);
 	    	}
+	    }	
+
+	    if (message.startsWith(TextFormatting.DARK_RED+"[") && message2.contains(" -> me]") && !splitmessage2[0].endsWith(":") && !splitmessage[1].endsWith(":") && (Afk.AFK || ToggleAfk.AFK)) {
+	    	String msgname = "";
+	    	if (message2.startsWith("[[")) {
+	    		msgname = splitmessage2[1];
+	    	}
+	    	else {
+	    		msgname = splitmessage[0].substring(1);
+	    	}
 	    	
 	    	if (!afknames.contains(msgname)) {
 	    		Minecraft.getMinecraft().player.sendChatMessage(Afk.AFKmessage);
@@ -780,36 +792,29 @@ public class PrefixMod {
 	    	 nicks.add(addnick.replace(".",""));
 	    	 isdonor50 = true;
 	    }
+
 	    if (message2.startsWith("Your nickname is now")) {
 	    	String addnick = splitmessage2[splitmessage2.length-1];
 	    	 nicks.add(addnick.replace(".",""));
 	    }
 	    
 	    if (message2.startsWith("WARNING") && message2.contains("seconds") && noticeclag.Toggled) {
-	    	Minecraft.getMinecraft().ingameGUI.displayTitle(TextFormatting.BOLD+""+TextFormatting.RED+"Items"+TextFormatting.RESET+" clear in "+splitmessage2[7], "", 0, 0, 0);
+	    	Minecraft.getMinecraft().ingameGUI.displayTitle(TextFormatting.BOLD+""+TextFormatting.RED+"Items"+TextFormatting.RESET+" removed in "+splitmessage2[7], "", 0, 0, 0);
+	    }
+
+	    if (message2.startsWith("WARNING (!)") && message2.contains("seconds") && noticeclag.Toggled) {
+	    	Minecraft.getMinecraft().ingameGUI.displayTitle(TextFormatting.BOLD+""+TextFormatting.RED+"Items"+TextFormatting.RESET+" removed in "+splitmessage2[8], "", 0, 0, 0);
 	    }
 	    
-	    if (message2.contains("[SkyblockBans]") && message2.startsWith("[S") && ToggleBans.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (message2.contains("Welcome to Skyblock!") && message2.startsWith("Welcome") && ToggleJoins.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (message2.contains("Has made the advancement") && ToggleAdvancement.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (message2.contains("has just opened a Rare Crate!") && ToggleRarecrate.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
 	    if (message2.contains("[MobArena]") && message2.startsWith("[M") && ToggleMobarena.Toggled) {
 	    	event.setCanceled(true);
 	    }
 
-	    if (message2.startsWith("WARNING") && message2.contains("Ground items will be removed in") && ToggleGround.Toggled) {
+	    if (message2.contains("[SBLotto] Cong") && autobuy) {
+	    	Minecraft.getMinecraft().player.sendChatMessage("/lot buy 2");
+	    }
+
+	    if (message2.contains("[SBLotto") && message2.startsWith("[S") && ToggleLottery.Toggled) {
 	    	event.setCanceled(true);
 	    }
 	    
@@ -818,6 +823,42 @@ public class PrefixMod {
 	    }
 	    
 	    if (message2.contains("[SBLottery]") && message2.startsWith("[S") && ToggleLottery.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.contains("made the advancement") && ToggleAdvancement.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.contains("has just opened a Rare Crate") && ToggleRarecrate.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.contains("but you") && message2.startsWith("Hey!") && ToggleSorry.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.contains("[SkyblockBans]") && message2.startsWith("[S") && ToggleBans.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.contains("[SkyChat]") && message2.startsWith("[S") && ToggleSkychat.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.startsWith("[SBCrates]") && message2.startsWith("[S") && ToggleCrates.Toggled) {
+
+	    }
+
+	    if (message2.contains("lucky and received") && message2.endsWith("from voting!") && message2.endsWith("Skybucks!") && message2.endsWith("key!") && (ToggleLucky.Toggled)) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.startsWith("WARNING (!)") && message2.contains("Ground items will be removed in") && ToggleGround.Toggled) {
+	    	event.setCanceled(true);
+	    }
+
+	    if (message2.startsWith("WARNING") && message2.contains("Ground items will be removed in") && ToggleGround.Toggled) {
 	    	event.setCanceled(true);
 	    }
 	    
@@ -833,36 +874,6 @@ public class PrefixMod {
 	    	event.setCanceled(true);
 	    }
 	    
-	    if (ToggleLucky.Toggled && 
-	    		(!splitmessage2[0].endsWith("from voting!") && (message2.contains("was super lucky and received") || message2.contains("was lucky and received"))) ||
-	    		message2.contains("was super duper lucky and received")
-	    		) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (message2.contains("[Skyblock]") && message2.startsWith("[S") && ToggleTips.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (message2.contains("[SkyChat]") && message2.startsWith("[S") && ToggleSkychat.Toggled) {
-	    	event.setCanceled(true);
-	    }
-
-	    if (ToggleShop.Toggled && 
-	    		(!splitmessage2[0].endsWith(":") && (message2.contains("bartered") || message2.contains("shop") || message2.contains("bought"))) ||
-	    		message2.startsWith("[Shop]")
-	    		) {
-	    	event.setCanceled(true);
-	    }
-	    
-	    if (ToggleSpawned.Toggled && 
-	    		(!splitmessage2[0].endsWith("Mob quantity limited to server limit.") && (message2.endsWith("rabbits spawned") || message2.endsWith("cows spawned")) ||
-	    		message2.endsWith("sheep spawned") && (message2.endsWith("mushroomcows spawned")) || message2.endsWith("ocelots spawned")) ||
-					message2.endsWith("parrots spawned") && (message2.endsWith("pigs spawned") && message2.endsWith("chickens spawned"))
-	    		) {
-	    	event.setCanceled(true);
-	    }
-
 	    try {
 	    	if (splitmessage2[3].contains("vote.skyblock.net") && ToggleVote.Toggled) {
 	    		event.setCanceled(true);
@@ -872,6 +883,9 @@ public class PrefixMod {
 	    	;
 	    }
 	    
+	    if (message2.contains("[Skyblock]") && message2.startsWith("[S") && ToggleTips.Toggled) {
+	    	event.setCanceled(true);
+	    }
 	    for (int i = 0; i < splitmessage.length; i++) {
 	    	boolean include = true;
 	    	if ((splitmessage[i].startsWith("<") && splitmessage[i].endsWith(">")) || splitmessage[i].endsWith(":") || splitmessage[i].endsWith("]")) {
@@ -882,7 +896,7 @@ public class PrefixMod {
 	    	try {
 	    	if (splitmessage2[i].toLowerCase().contains(nicks.get(j).toLowerCase()) && include) {
 	    		String lowermessage = splitmessage[i].toLowerCase();
-	    		splitmessage[i] = (lowermessage.replace(nicks.get(j).toLowerCase(),"Â§e"+nicks.get(j)+"Â§r"));
+	    		splitmessage[i] = (lowermessage.replace(nicks.get(j).toLowerCase(),"§e"+nicks.get(j)+"§r"));
 	    		changechat = true;
 	    		playsound = true;
 	    	}
@@ -897,7 +911,7 @@ public class PrefixMod {
 
 	    if (changechat && !toggled) {
 	    	
-	    	String[] splitformat = newstring.split("Â§");
+	    	String[] splitformat = newstring.split("§");
 	    	newstring = "";
 	    	for (int i = 0; i < splitformat.length; i++) {
 	    		if (splitformat[i].startsWith("a")) {
@@ -1009,3 +1023,6 @@ public class PrefixMod {
 	}
 	
 }
+
+
+	
