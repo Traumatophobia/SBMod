@@ -25,6 +25,7 @@ public class EnchantAll implements IClientCommand {
     { 
 		aliases = new ArrayList();
 		aliases.add("eall");
+		aliases.add("eaa");
 		aliases.add("godall");
 		
     } 
