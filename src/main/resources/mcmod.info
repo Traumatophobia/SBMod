@@ -1,9 +1,9 @@
 [
 {
   "modid": "tsb",
-  "name": "Skyblock Mod",
+  "name": "Skyblock And Economy Mod",
   "description": "A mod designed for skyblock.net",
-  "version": "0.2",
+  "version": "2.0",
   "mcversion": "${mcversion}",
   "url": "https://github.com/Traumatophobia/SBMod",
   "updateUrl": "",
