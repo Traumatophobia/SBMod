@@ -38,11 +38,11 @@ public class ToggleLucky implements IClientCommand {
 		ITextComponent telluser = new TextComponentString("");
 		if (Toggled == true) {
 			Toggled = false;
-			telluser.appendText("Lucky vote reward notifications enabled");
+			telluser.appendText("Enabled Lucky Vote reward notifications");
 		}
 		else if (Toggled == false) {
 			Toggled = true;
-			telluser.appendText("Lucky vote reward notifications disabled");
+			telluser.appendText("Disabled Lucky Vote reward notifications");
 			
 		}
 		Minecraft.getMinecraft().player.sendMessage(telluser);
