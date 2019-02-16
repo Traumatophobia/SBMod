@@ -21,7 +21,7 @@ public class ToggleAdvancement implements IClientCommand {
 	public ToggleAdvancement()
     { 
 		aliases = new ArrayList();
-		aliases.add("tadv");
+		aliases.add("tadvance");
 		aliases.add("toggleadvance");
 		
     } 
@@ -38,11 +38,11 @@ public class ToggleAdvancement implements IClientCommand {
 		ITextComponent telluser = new TextComponentString("");
 		if (Toggled == true) {
 			Toggled = false;
-			telluser.appendText("Enabled in chat 'Has made the advancement' notifications.");
+			telluser.appendText("Enabled advancement notifications.");
 		}
 		else if (Toggled == false) {
 			Toggled = true;
-			telluser.appendText("Disabled in chat 'Has made the advancement' notifications.");
+			telluser.appendText("Disabled advancement notifications.");
 			
 		}
 		Minecraft.getMinecraft().player.sendMessage(telluser);
