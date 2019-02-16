@@ -62,13 +62,13 @@ public class Help implements IClientCommand {
 		else if (arg2[0].equals("2")) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Auto Utility commands"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autobuy - Automatically buys 1 lottery ticket"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autobuy - Automatically buys 2 lottery tickets"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvert [message] - automatically sends message every 5 minutes"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadvertstop - stops auto advert"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/stopautoadvert - stops auto advert"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoadverttime [time] - sets the time between auto adverts"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autoprivate [Line2] [Line3] - Automatically writes private signs"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/colors - shows all formatting colors"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/clag - displays 'ClearLag' overlay "));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/clag - displays clearLag notification countdown onscreen as an overlay "));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/joincommand - Adds commands to be used when you log in"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("do /thelp 3 for next page"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
@@ -81,14 +81,14 @@ public class Help implements IClientCommand {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleadvancement - removes 'Has made the advancement' from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglebans - removes [SkyblockBans] from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleground - removes 'Ground items will be removed in' from chat "));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglejoins - removes new players 'Welcome to Skyblock!' from chat "));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglelottery - removes [SBLottery] from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglelucky - removes 'lucky vote rewards' from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglemobarena - removes [MobArena] in chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglenotify - toggles your name being highlighted"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglerarecrate - toggles 'has opened a rare crate key' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglecrates - removes crate key from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglerarecrate - removes 'rare crate key' from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleshop - removes shop notifications"));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleskychat - removes '[Skychat] hover game' from chat"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggleskychat - removes [Skychat] hover game from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/toggletips - removes [Skyblock] in chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglevotes - removes 'player voted' from chat"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/togglewelcome - removes the island border 'welcome' overlay"));
@@ -97,7 +97,7 @@ public class Help implements IClientCommand {
 		}
 		else if (arg2[0].equals("4")) {
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
-			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skylord+ commands"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skylord+ or Elite commands"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString("/autofix - Automatically fixes when durability falls below 20%"));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(boarder));
 			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(TextFormatting.BOLD+"Skygod+ commands"));
