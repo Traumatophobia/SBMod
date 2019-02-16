@@ -11,7 +11,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.client.IClientCommand;
 
 public class AutoAdvertTime implements IClientCommand {
@@ -48,7 +47,7 @@ public class AutoAdvertTime implements IClientCommand {
 		}
 		else {
 			try {
-			if (Integer.parseInt(arg2[0]) < 5) {
+			if (Integer.parseInt(arg2[0]) < 2) {
 				Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Minimum time of 5 minuites!"));
 			}
 			else {
