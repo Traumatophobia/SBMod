@@ -18,7 +18,6 @@ public class ToggleNotify implements IClientCommand {
 	
 	public ToggleNotify() {
 		aliases = new ArrayList();
-		aliases.add("notify");
 		aliases.add("togglenotify");
 		aliases.add("alert");
 	}
